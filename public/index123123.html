@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Twitter-like</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css"> 
+<script type="text/javascript" src="jquery-1.11.0.min.js"> </script>
+// <script  src="app.js"> </script>
+</head>
+
+
+<body class="twitter-body"> 
+	<div class="content form">
+		<h2 class="text"> Twitter_link </h2>
+	   <form action="#"> 
+	 <label class="sometext">Write some text</label>
+     <textarea  id ="message" name="message" cols="40" rows ="3"></textarea> 
+     <div id="captch">
+     	<label class="word">Word Verification</label>
+     	<img src="http://www.captchacreator.com/captcha/captchac_code.php" 
+http://www.google.com/recaptcha/mailhide/d?k=01bxTk8rhdlTggiGAjmyyhPg==&c=dgj0i8bubWWLHuKM8maXMwqb2E_O6rwhh0tNCcxJ1WI=
+        class="captcha">
+     	<label class="type">Type in the code</label>
+     	<input type="text" name ="captch2" class="captcha2">
+     	<div class="picture"></div>
+     </div>
+       <input id="publish" type="submit" value="Publish" style="cursor: pointer;
+        color:rgb(20, 69, 237); position:absolute; margin-top: 20px;
+       margin-left: 320px">
+    </form >
+    </div>
+	<script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6LeaCfkSAAAAAACIoQhL3J8h6zy27CZnCSPWivC0"></script><noscript><iframe src="http://www.google.com/recaptcha/api/noscript?k=6LeaCfkSAAAAAACIoQhL3J8h6zy27CZnCSPWivC0" height="300" width="500" frameborder="0"></iframe><br><textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea><input type="hidden" name="recaptcha_response_field" value="manual_challenge"></noscript>
+</body>
+</html>
+
+
+<script type="text/javascript">
+$(#publish).on('click',function() {
+ var message = document.getElementById('message');
+ var captcha2 = document.getElementById('captcha2');
+
+
+ var data={
+    message:me.val();
+    captcha2:captcha2.val()
+ };
+
+  $.ajax({
+    url:'./link',
+    data:JSON.stinrify(data),
+    type:'POST',
+    success:function(){
+              console.log("Success!!!");
+            }
+
+
+    });
+
+})
+</script>

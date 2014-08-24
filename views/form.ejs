@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Twitter-like</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="./style.css"> 
+</head>
+<body class="twitter-body"> 
+	<div class="content form">
+			<h2 class="text"> Twitter-like </h2>
+	<form method="POST" action="/result">
+		<p class="sometext">Write some text</p>
+	    <textarea id="message" name="message" cols="40" rows ="3"></textarea>
+	<div class="captcha"><%- recaptcha_form %> </div>
+	<input type="submit" value="Publish" style="cursor: pointer;
+        color:rgb(20, 69, 237); position:absolute; margin-top: 20px;
+       margin-left: 320px; width: 70px">
+   </div>
+  </form>
+</body>
+</html>
+ 
